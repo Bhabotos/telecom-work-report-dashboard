@@ -6,19 +6,27 @@
     },
     {
       "source": "/meta",
-      "destination": "/api/index.js"
+      "destination": "/api/meta"
     },
     {
       "source": "/dashboard",
-      "destination": "/api/index.js"
+      "destination": "/api/dashboard"
+    },
+    {
+      "source": "/reports/daily/(.*)",
+      "destination": "/api/reports-daily"
+    },
+    {
+      "source": "/reports/monthly/(.*)",
+      "destination": "/api/reports-monthly"
     },
     {
       "source": "/reports/(.*)",
-      "destination": "/api/index.js"
+      "destination": "/api/reports"
     },
     {
       "source": "/reports",
-      "destination": "/api/index.js"
+      "destination": "/api/reports"
     },
     {
       "source": "/((?!api/.*).*)",
