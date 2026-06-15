@@ -1,35 +1,47 @@
 {
   "rewrites": [
     {
-      "source": "/auth/(.*)",
-      "destination": "/api/auth/$1"
+      "source": "/auth/:path*",
+      "destination": "/api/auth/:path*"
     },
     {
       "source": "/meta",
-      "destination": "/api/meta"
+      "destination": "/api/mock?route=meta"
     },
     {
       "source": "/dashboard",
-      "destination": "/api/dashboard"
+      "destination": "/api/mock?route=dashboard"
     },
     {
-      "source": "/reports/daily/(.*)",
-      "destination": "/api/reports-daily"
+      "source": "/reports/daily/:date",
+      "destination": "/api/mock?route=reports-daily"
     },
     {
-      "source": "/reports/monthly/(.*)",
-      "destination": "/api/reports-monthly"
+      "source": "/reports/monthly/:month",
+      "destination": "/api/mock?route=reports-monthly"
     },
     {
-      "source": "/reports/(.*)",
-      "destination": "/api/reports"
+      "source": "/reports/:path*",
+      "destination": "/api/mock?route=reports"
     },
     {
       "source": "/reports",
-      "destination": "/api/reports"
+      "destination": "/api/mock?route=reports"
     },
     {
-      "source": "/((?!api/.*).*)",
+      "source": "/master/:path*",
+      "destination": "/api/mock?route=master"
+    },
+    {
+      "source": "/users",
+      "destination": "/api/mock?route=users"
+    },
+    {
+      "source": "/export/:path*",
+      "destination": "/api/mock?route=export"
+    },
+    {
+      "source": "/:path*",
       "destination": "/index.html"
     }
   ]
