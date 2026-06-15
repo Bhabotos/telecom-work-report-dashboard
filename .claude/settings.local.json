@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(run)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:5173)",
+      "Bash(start chrome *)",
+      "Bash(netstat -ano)",
+      "Bash(curl *)",
+      "Bash(C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe *)",
+      "Bash(tasklist)",
+      "Bash(node *)",
+      "Bash(powershell -Command \"Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait\\('%{TAB}'\\); Start-Sleep -Seconds 1\")"
+    ]
+  }
+}
