@@ -80,32 +80,107 @@ export default function handler(req, res) {
     }
 
     if (route === "reports-daily") {
-      return json(res, {
-        rows: [],
-        taskTypes: [],
-        planners: []
-      });
-    }
+  return json(res, {
+    rows: [
+      {
+        id: 1,
+        report_date: "2026-01-05",
+        month: "2026-01",
+        planner_name: "Bhabotos",
+        project_name: "Backbone Planning",
+        task_type: "SPR Feedback",
+        work_count: 45,
+        remarks: "SPR feedback completed for backbone link"
+      },
+      {
+        id: 2,
+        report_date: "2026-01-05",
+        month: "2026-01",
+        planner_name: "Ahsan",
+        project_name: "OH to UG Shifting",
+        task_type: "Impact Analysis",
+        work_count: 52,
+        remarks: "Impact list prepared"
+      }
+    ],
+    taskTypes: [
+      { name: "SPR Feedback", value: 45 },
+      { name: "Impact Analysis", value: 52 }
+    ],
+    planners: [
+      { name: "Bhabotos", value: 45 },
+      { name: "Ahsan", value: 52 }
+    ]
+  });
+}
 
     if (route === "reports-monthly") {
-      return json(res, {
-        rows: [],
-        totals: {
-          total_tasks: 0,
-          total_count: 0,
-          total_duct: 0,
-          total_oh: 0,
-          total_ug: 0
-        },
-        planners: [],
-        projects: [],
-        taskTypes: [],
-        dailyTrend: [],
-        managementSummary: "No monthly report data found.",
-        topPlanner: null,
-        topProject: null
-      });
-    }
+  return json(res, {
+    rows: [
+      {
+        id: 1,
+        report_date: "2026-01-05",
+        planner_name: "Bhabotos",
+        project_name: "Backbone Planning",
+        task_type: "SPR Feedback",
+        work_count: 45,
+        duct_length_meter: 250,
+        remarks: "SPR feedback completed for backbone link"
+      },
+      {
+        id: 2,
+        report_date: "2026-01-12",
+        planner_name: "Ahsan",
+        project_name: "OH to UG Shifting",
+        task_type: "Impact Analysis",
+        work_count: 52,
+        duct_length_meter: 400,
+        remarks: "Impact list prepared for OH to UG shifting"
+      },
+      {
+        id: 3,
+        report_date: "2026-01-18",
+        planner_name: "Sohel",
+        project_name: "ISP T-Joint",
+        task_type: "Port Planning",
+        work_count: 28,
+        duct_length_meter: 200,
+        remarks: "T-joint and vertical planning completed"
+      }
+    ],
+    totals: {
+      total_tasks: 3,
+      total_count: 125,
+      total_duct: 850,
+      total_oh: 42,
+      total_ug: 83
+    },
+    planners: [
+      { name: "Bhabotos", value: 45 },
+      { name: "Ahsan", value: 52 },
+      { name: "Sohel", value: 28 }
+    ],
+    projects: [
+      { name: "Backbone Planning", value: 45 },
+      { name: "OH to UG Shifting", value: 52 },
+      { name: "ISP T-Joint", value: 28 }
+    ],
+    taskTypes: [
+      { name: "SPR Feedback", value: 45 },
+      { name: "Impact Analysis", value: 52 },
+      { name: "Port Planning", value: 28 }
+    ],
+    dailyTrend: [
+      { name: "Jan 05", value: 45 },
+      { name: "Jan 12", value: 52 },
+      { name: "Jan 18", value: 28 }
+    ],
+    managementSummary:
+      "January 2026 monthly report includes backbone SPR feedback, OH to UG impact analysis, and ISP T-joint planning activities.",
+    topPlanner: { name: "Ahsan" },
+    topProject: { name: "OH to UG Shifting" }
+  });
+}
 
     if (route === "reports") {
       if (req.method === "POST") {
