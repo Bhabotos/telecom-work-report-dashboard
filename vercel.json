@@ -6,15 +6,19 @@
     },
     {
       "source": "/meta",
-      "destination": "/api/index"
+      "destination": "/api/index.js"
     },
     {
       "source": "/dashboard",
-      "destination": "/api/index"
+      "destination": "/api/index.js"
     },
     {
       "source": "/reports/(.*)",
-      "destination": "/api/index"
+      "destination": "/api/index.js"
+    },
+    {
+      "source": "/reports",
+      "destination": "/api/index.js"
     },
     {
       "source": "/((?!api/.*).*)",
